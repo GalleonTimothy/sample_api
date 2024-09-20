@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+    <script>
+        // Check if user is already logged in
+        if (localStorage.getItem('loggedIn') === 'true') {
+            window.location.href = 'index.html'; // Redirect to the main page
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="back-btn"><button onclick="window.location.href='index.html'"><ion-icon name="arrow-back-outline"></ion-icon></button></div>
+            <form id="loginForm">
+                <h2>Login</h2>
+            
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+            
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+            
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me?</label>
+                </div>
+            
+                <div class="login-btn">
+                    <button type="submit">LOGIN</button>
+                </div>
+            
+                <div id="message"></div> <!-- Message div for feedback -->
+            
+                <div class="forgot-password">
+                    <button type="button">Forgot password?</button>
+                </div>
+            
+                <div class="register">
+                    Don't have an account?
+                    <button type="button">Click here!</button>
+                </div>
+            
+                <div class="login-business">
+                    Login your business account
+                    <button type="button">here</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="right">
+            <div class="tagline">
+                <span id="main-text">Dasol Pangasinan: Where Serenity Meets</span>
+                <span id="underlined-text" class="underlined"></span>
+            </div>
+
+            <div class="socials">
+                <button><div class="overlay-btn"></div><ion-icon name="logo-facebook"></ion-icon></button>
+                <button><ion-icon name="logo-instagram"></ion-icon></button>
+                <button><ion-icon name="logo-twitter"></ion-icon></button>
+                <button><ion-icon name="logo-tiktok"></ion-icon></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const underlinedText = "the Sea!";
+        let index = 0;
+
+        function typeUnderlinedText() {
+            if (index < underlinedText.length) {
+                document.getElementById('underlined-text').innerHTML += underlinedText.charAt(index);
+                index++;
+                setTimeout(typeUnderlinedText, 100); // Adjust typing speed here
+            } else {
+                // Pause for a moment, then reset
+                setTimeout(() => {
+                    index = 0;
+                    document.getElementById('underlined-text').innerHTML = ''; // Clear the text
+                    typeUnderlinedText(); // Start typing again
+                }, 10000); // Adjust pause duration before looping
+            }
+        }
+
+        typeUnderlinedText();
+    </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("loginForm");
+        const messageDiv = document.getElementById("message");
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            messageDiv.textContent = '';
+
+            fetch('https://dasol.free.nf/api/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    email: email,
+                    password: password
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        messageDiv.style.color = 'green';
+                        messageDiv.textContent = 'Login successful! User ID: ' + data.user_id;
+
+                        // Store a flag in local storage
+                        localStorage.setItem('loggedIn', 'true');
+
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1000);
+                    } else {
+                        messageDiv.style.color = 'red';
+                        messageDiv.textContent = data.message;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    messageDiv.style.color = 'red';
+                    messageDiv.textContent = 'An error occurred. Please try again.';
+                });
+        });
+    });
+</script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

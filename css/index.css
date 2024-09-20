@@ -1,0 +1,124 @@
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;    /* Set your preferred height */
+    overflow: hidden;
+}
+
+.slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    object-position: center;
+}
+
+.slider-image.active {
+    opacity: 1;
+}
+
+
+.image-slider .slider-overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slider-overlay .search-bar{
+    width: 50%;
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+
+.slider-overlay .search-bar input{
+    width: 100%;
+    height: 100%;
+    padding: 0 30px 0 70px;
+    border: none;
+    outline: none;
+    font-size: 12pt;
+    color: black;
+}
+
+.slider-overlay .search-bar input::placeholder{
+    font-size: 12pt;
+}
+
+.slider-overlay .search-bar .search-icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
+}
+
+.slider-overlay .logo-text{
+    font-size: 100pt;
+    color: white;
+    font-family: "Caesar Dressing", system-ui;
+    user-select: none;
+}
+
+
+
+.container{
+    width: 100%;
+    height: auto;
+}
+
+.popular-destination{
+    width: 100%;
+    height: auto;
+}
+
+.popular-destination .title-text{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+
+/* mobile view */
+
+@media screen and (max-width: 768px) {
+    header{
+        height: 70px;
+    }
+    .image-slider{
+        height: 250px;
+        margin-top: 70px;
+    }
+    .slider-overlay .logo-text{
+        font-size: 50px;
+    }
+    .slider-overlay .search-bar{
+        width: 80%;
+        height: 40px;
+    }
+
+    .slider-overlay .search-bar input{
+        padding: 0 20px 0 50px;
+    }
+    .slider-overlay .search-bar .search-icon{
+        width: 50px;
+    }
+}

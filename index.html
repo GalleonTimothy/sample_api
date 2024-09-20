@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://unpkg.com/htmx.org"></script>
+    <title>Home</title>
+    <style>
+        .home-button{
+            box-shadow: inset 0 0 0 2px #0C3157;
+            color: #0C3157;
+        }
+
+        @media screen and (max-width: 768px) {
+            .home-button{
+            box-shadow: none;
+            border-bottom: 2px solid #0C3157;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header" hx-get="partials/header.html" hx-trigger="load"></div>
+
+    <div class="image-slider">
+        <div class="slider-overlay">
+            <div class="logo-text">DASOL</div>
+            <div class="search-bar">
+                <div class="search-icon"><ion-icon name="search-sharp"></ion-icon></div>
+                <input type="text" placeholder="What are you looking for?">
+            </div>
+        </div>
+        <img src="assets/img-slider/image-slider-1.jpg" class="slider-image">
+        <img src="assets/img-slider/image-slider-2.jpg" class="slider-image">
+        <img src="assets/img-slider/image-slider-3.jpg" class="slider-image">
+        <img src="assets/img-slider/image-slider-4.jpg" class="slider-image">
+    </div>
+
+
+    <div class="container">
+        <div class="popular-destination">
+            <div class="title-text">Popular Destinations</div>
+            <section>
+                <div class="card__container swiper">
+                    <div class="card__content">
+                        <div class="swiper-wrapper">
+                            <article class="card__article swiper-slide">
+                                <div class="card__image">
+                                    <img src="assets/locations/Dasol Beach Villas.jpg" alt="image" class="card__img">
+                                    <div class="card__shadow"></div>
+                                </div>
+            
+                                <div class="card__data">
+                                    <h3 class="card__name">Dasol Beach Villas</h3>
+                                    <button href="#" class="card__button">Explore</button>
+                                </div>
+                            </article>
+            
+                            <article class="card__article swiper-slide">
+                                <div class="card__image">
+                                    <img src="assets/locations/Collibra-Island.jpg" alt="image" class="card__img">
+                                    <div class="card__shadow"></div>
+                                </div>
+            
+                                <div class="card__data">
+                                    <h3 class="card__name">Collibra Island</h3>
+                                    <button href="#" class="card__button">Explore</button>
+                                </div>
+                            </article>
+            
+                            <article class="card__article swiper-slide">
+                                <div class="card__image">
+                                    <img src="assets/locations/Cabacungan-cove.jpg" alt="image" class="card__img">
+                                    <div class="card__shadow"></div>
+                                </div>
+            
+                                <div class="card__data">
+                                    <h3 class="card__name">Cabacungan Cove</h3>
+                                    <button href="#" class="card__button">Explore</button>
+                                </div>
+                            </article>
+            
+                            <article class="card__article swiper-slide">
+                                <div class="card__image">
+                                    <img src="assets/locations/Cabacungan-cove.jpg" alt="image" class="card__img">
+                                    <div class="card__shadow"></div>
+                                </div>
+            
+                                <div class="card__data">
+                                    <h3 class="card__name">Balinmanok Cove</h3>
+                                    <button href="#" class="card__button">Explore</button>
+                                </div>
+                            </article>
+            
+                            <article class="card__article swiper-slide">
+                                <div class="card__image">
+                                    <img src="assets/locations/Tambobong-adventure.jpg" alt="image" class="card__img">
+                                    <div class="card__shadow"></div>
+                                </div>
+            
+                                <div class="card__data">
+                                    <h3 class="card__name">Tambobong Adventure</h3>
+                                    <button href="#" class="card__button">Explore</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+            
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+            
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+            
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="footer" hx-get="partials/footer.html" hx-trigger="load"></div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4232054429086718"
+        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

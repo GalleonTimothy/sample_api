@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none !important;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/login-bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(0, 0, 0, 0.432);
+}
+
+.container .left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.container .left .back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.container .left .back-btn button {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #0C3157;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15pt;
+}
+
+
+.container .left .back-btn:hover {
+  box-shadow: 0 0 5px white;
+}
+
+.container .left .back-btn:hover button {
+  color: white;
+  background: #0C3157;
+}
+
+.container .left form {
+  width: 350px;
+  height: 500px;
+  backdrop-filter: blur(10px);
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.568);
+  padding: 50px 40px 30px 40px;
+  color: white;
+}
+
+
+.input-box {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: white;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.568);
+  border-radius: 5px;
+  color: white;
+}
+
+
+.remember-me {
+  display: flex;
+  gap: 10px;
+  font-size: 10pt;
+  margin: 10px auto;
+}
+
+.remember-me label {
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+}
+
+.login-btn button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: black;
+  font-size: 10pt;
+  cursor: pointer;
+}
+
+.login-btn button:hover {
+  background: lightgray;
+}
+
+.forgot-password {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.forgot-password button {
+  float: right;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.forgot-password button:hover {
+  color: lightgrey;
+}
+
+.register {
+  display: flex;
+  width: 100%;
+  height: auto;
+  font-size: 11pt;
+  gap: 5px;
+  padding: 20px 0 10px 0;
+}
+
+.register button {
+  font-size: 11pt;
+  padding: none;
+  width: fit-content;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #f6ae31;
+}
+
+.login-business {
+  display: flex;
+  width: 100%;
+  height: auto;
+  font-size: 10pt;
+  align-items: center;
+  gap: 3px;
+}
+
+.login-business button {
+  font-size: 10pt;
+  padding: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: white;
+}
+
+/* right */
+
+.container .right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.tagline {
+  width: 490px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.underlined {
+  text-decoration: underline 5px;
+  font-size: 40px;
+  font-weight: bold;
+  display: inline-block;
+  animation: caret 0.7s step-end infinite;
+}
+
+@keyframes caret {
+  from {
+    border-color: transparent;
+  }
+
+  to {
+    border-color: black;
+  }
+}
+
+.socials{
+  display: flex;
+  gap: 10px;
+}
+
+.socials button{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15pt;
+  background: white;
+}
+
+
+.socials button:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 10px white;
+}
+
+.socials button:first-child ion-icon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.socials button:first-child{
+   position: relative; 
+}
+
+.overlay-btn{
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container .left{
+    width: 100%;
+  }
+
+  .container .left form{
+    width: 90%;
+    height: auto;
+    padding: 50px 20px 30px 20px;
+  }
+  .container .right{
+    display: none;
+  }
+}
